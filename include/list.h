@@ -1,5 +1,4 @@
 #pragma once
-
 /**
  * Liste générique doublement chaînée.
  */
@@ -82,6 +81,8 @@ struct list_t {
 	struct list_node_t *head, *tail;
 	unsigned int size;
 };
+
+typedef struct list_t list_t;
 
 /**
  * Construit et initialise une liste doublement chaînée vide.
