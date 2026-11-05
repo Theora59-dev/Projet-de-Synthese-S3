@@ -1,7 +1,7 @@
 [
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/usr/bin/gcc",
       "-Iinclude",
       "-std=c11",
       "-Wall",
@@ -14,13 +14,13 @@
       "build/main.o",
       "src/main.c"
     ],
-    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
-    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/main.c",
-    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/main.o"
+    "directory": "/home/clement/Projets/Projet-de-Synthese-S3",
+    "file": "/home/clement/Projets/Projet-de-Synthese-S3/src/main.c",
+    "output": "/home/clement/Projets/Projet-de-Synthese-S3/build/main.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/usr/bin/gcc",
       "-Iinclude",
       "-std=c11",
       "-Wall",
@@ -33,13 +33,13 @@
       "build/algo.o",
       "src/algo.c"
     ],
-    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
-    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/algo.c",
-    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/algo.o"
+    "directory": "/home/clement/Projets/Projet-de-Synthese-S3",
+    "file": "/home/clement/Projets/Projet-de-Synthese-S3/src/algo.c",
+    "output": "/home/clement/Projets/Projet-de-Synthese-S3/build/algo.o"
   },
   {
     "arguments": [
-      "/usr/bin/clang",
+      "/usr/bin/gcc",
       "-Iinclude",
       "-std=c11",
       "-Wall",
@@ -52,8 +52,8 @@
       "build/dyntable.o",
       "src/dyntable.c"
     ],
-    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
-    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/dyntable.c",
-    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/dyntable.o"
+    "directory": "/home/clement/Projets/Projet-de-Synthese-S3",
+    "file": "/home/clement/Projets/Projet-de-Synthese-S3/src/dyntable.c",
+    "output": "/home/clement/Projets/Projet-de-Synthese-S3/build/dyntable.o"
   }
 ]
