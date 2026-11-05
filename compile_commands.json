@@ -1,0 +1,59 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Iinclude",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-O2",
+      "-g",
+      "-c",
+      "-o",
+      "build/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
+    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/main.c",
+    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Iinclude",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-O2",
+      "-g",
+      "-c",
+      "-o",
+      "build/algo.o",
+      "src/algo.c"
+    ],
+    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
+    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/algo.c",
+    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/algo.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-Iinclude",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-O2",
+      "-g",
+      "-c",
+      "-o",
+      "build/dyntable.o",
+      "src/dyntable.c"
+    ],
+    "directory": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3",
+    "file": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/src/dyntable.c",
+    "output": "/home/strachy/Documents/Cours/L2/Semestre_1/Projet de synthèse/Projet-de-Synthese-S3/build/dyntable.o"
+  }
+]
