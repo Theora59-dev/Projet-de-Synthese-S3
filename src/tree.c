@@ -19,31 +19,31 @@
  * @return le nouveau nœud créé
  */
 static struct tree_node_t *new_tree_node(void *data) {
-  // TO DO
+	// TO DO
 }
 
 void *get_tree_node_data(const struct tree_node_t *node) {
-  // TO DO
+	// TO DO
 }
 
 struct tree_node_t *get_left(const struct tree_node_t *node) {
-  // TO DO
+	// TO DO
 }
 
 struct tree_node_t *get_right(const struct tree_node_t *node) {
-  // TO DO
+	// TO DO
 }
 
 void set_tree_node_data(struct tree_node_t *node, void *newData) {
-  // TO DO
+	// TO DO
 }
 
 void set_left(struct tree_node_t *node, struct tree_node_t *newLeft) {
-  // TO DO
+	// TO DO
 }
 
 void set_right(struct tree_node_t *node, struct tree_node_t *newRight) {
-  // TO DO
+	// TO DO
 }
 
 /********************************************************************
@@ -51,31 +51,31 @@ void set_right(struct tree_node_t *node, struct tree_node_t *newRight) {
  ********************************************************************/
 
 struct tree_t *new_tree() {
-  // TO DO
+	// TO DO
 }
 
 int tree_is_empty(const struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 unsigned int get_tree_size(const struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 struct tree_node_t *get_tree_root(const struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 void increase_tree_size(struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 void decrease_tree_size(struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 void set_tree_root(struct tree_t *T, struct tree_node_t *newRoot) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -88,14 +88,14 @@ void set_tree_root(struct tree_t *T, struct tree_node_t *newRoot) {
  * @param[in] freeData
  */
 static void free_subtree(struct tree_node_t *node, void (*freeData)(void *)) {
-  // TO DO
+	// TO DO
 }
 
 /**
  * NB : Utilisez la procédure récursive free_subtree.
  */
 void delete_tree(struct tree_t *T, void (*freeData)(void *)) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -109,7 +109,7 @@ void delete_tree(struct tree_t *T, void (*freeData)(void *)) {
  */
 static void view_preorder(const struct tree_node_t *node,
                           void (*viewData)(const void *)) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -123,7 +123,7 @@ static void view_preorder(const struct tree_node_t *node,
  */
 static void view_inorder(const struct tree_node_t *node,
                          void (*viewData)(const void *)) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -137,12 +137,12 @@ static void view_inorder(const struct tree_node_t *node,
  */
 static void view_postorder(const struct tree_node_t *node,
                            void (*viewData)(const void *)) {
-  // TO DO
+	// TO DO
 }
 
 static void view_level_order(const struct tree_node_t *node,
                              void (*viewData)(const void *), int level) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -152,7 +152,7 @@ static void view_level_order(const struct tree_node_t *node,
  */
 void view_tree(const struct tree_t *T, void (*viewData)(const void *),
                int order) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -179,7 +179,7 @@ void view_tree(const struct tree_t *T, void (*viewData)(const void *),
 static struct tree_node_t *insert_into_subtree(struct tree_node_t *node,
                                                unsigned int position,
                                                void *data) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -187,7 +187,7 @@ static struct tree_node_t *insert_into_subtree(struct tree_node_t *node,
  * l'insertion.
  */
 void tree_insert(struct tree_t *T, void *data) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -214,7 +214,7 @@ void tree_insert(struct tree_t *T, void *data) {
 static struct tree_node_t *remove_from_subtree(struct tree_node_t *node,
                                                unsigned int position,
                                                void **data) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -222,7 +222,7 @@ static struct tree_node_t *remove_from_subtree(struct tree_node_t *node,
  * suppression.
  */
 void *tree_remove(struct tree_t *T) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -246,7 +246,7 @@ void *tree_remove(struct tree_t *T) {
  */
 static struct tree_node_t *get_tree_node_at_position(struct tree_node_t *node,
                                                      unsigned int position) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -254,10 +254,10 @@ static struct tree_node_t *get_tree_node_at_position(struct tree_node_t *node,
  * la recherche.
  */
 struct tree_node_t *tree_find_node(struct tree_t *T, unsigned int position) {
-  // TO DO
+	// TO DO
 }
 
 void tree_swap_nodes_data(struct tree_node_t *node1,
                           struct tree_node_t *node2) {
-  // TO DO
+	// TO DO
 }

@@ -11,9 +11,11 @@
  * (+) une référence (\p predecessor) au nœud précédent.
  */
 struct list_node_t {
-  void *data;
-  struct list_node_t *successor, *predecessor;
+	void *data;
+	struct list_node_t *successor, *predecessor;
 };
+
+typedef struct list_node_t list_node_t;
 
 /**
  * Restitue la donnée du nœud \p node.
@@ -77,8 +79,8 @@ void set_predecessor(struct list_node_t *node,
  * (+) le nombre de ces nœuds (\p size).
  */
 struct list_t {
-  struct list_node_t *head, *tail;
-  unsigned int size;
+	struct list_node_t *head, *tail;
+	unsigned int size;
 };
 
 /**

@@ -12,9 +12,9 @@
  * Condition : \p size / 4 \< \p used \<= \p size
  */
 struct dyn_table_t {
-  void **T;
-  unsigned int size;
-  unsigned int used;
+	void **T;
+	unsigned int size;
+	unsigned int used;
 };
 
 /**

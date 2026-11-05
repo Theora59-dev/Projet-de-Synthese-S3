@@ -17,9 +17,9 @@
  * (+) sa position au dictionnaire (\p dict_position).
  */
 struct heap_node_t {
-  unsigned long key;
-  void *data;
-  unsigned int dict_position;
+	unsigned long key;
+	void *data;
+	unsigned int dict_position;
 };
 
 /**
@@ -99,15 +99,18 @@ void set_heap_node_dict_position(struct heap_node_t *node,
  *     (-) \p delete_heap : pour la suppression
  */
 struct heap_t {
-  void *heap;
-  struct dyn_table_t *dict;
-  unsigned int (*heap_insert)(struct heap_t *H, unsigned long key, void *data);
-  struct heap_node_t *(*heap_extract_min)(struct heap_t *H);
-  void (*heap_increase_priority)(struct heap_t *H, unsigned int dict_position,
-                                 unsigned long newKey);
-  int (*heap_is_empty)(const void *H);
-  void (*view_heap)(const struct heap_t *H, void (*viewHeapNode)(const void *));
-  void (*delete_heap)(struct heap_t *H, void (*freeHeapNode)(void *));
+	void *heap;
+	struct dyn_table_t *dict;
+	unsigned int (*heap_insert)(struct heap_t *H, unsigned long key,
+	                            void *data);
+	struct heap_node_t *(*heap_extract_min)(struct heap_t *H);
+	void (*heap_increase_priority)(struct heap_t *H,
+	                               unsigned int dict_position,
+	                               unsigned long newKey);
+	int (*heap_is_empty)(const void *H);
+	void (*view_heap)(const struct heap_t *H,
+	                  void (*viewHeapNode)(const void *));
+	void (*delete_heap)(struct heap_t *H, void (*freeHeapNode)(void *));
 };
 
 /**

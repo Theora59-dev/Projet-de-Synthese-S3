@@ -25,12 +25,12 @@ struct edge_t;
  * dict_position) dans le sous-programme \p heap_increase_priority.)
  */
 struct vertex_t {
-  char *id;
-  struct list_t *incidence_list;
+	char *id;
+	struct list_t *incidence_list;
 
-  unsigned long total_distance;
-  struct vertex_t *predecessor;
-  unsigned int dict_position;
+	unsigned long total_distance;
+	struct vertex_t *predecessor;
+	unsigned int dict_position;
 };
 
 /**
@@ -135,8 +135,8 @@ void view_vertex(const void *V);
  * et \p V ainsi que par la distance entre ces deux sommets.
  */
 struct edge_t {
-  struct vertex_t *U, *V;
-  unsigned int distance;
+	struct vertex_t *U, *V;
+	unsigned int distance;
 };
 
 /**

@@ -15,8 +15,8 @@
  * (+) une référence (\p right) au fils droit.
  */
 struct tree_node_t {
-  void *data;
-  struct tree_node_t *left, *right;
+	void *data;
+	struct tree_node_t *left, *right;
 };
 
 /**
@@ -79,8 +79,8 @@ void set_right(struct tree_node_t *node, struct tree_node_t *newRight);
  * (+) le nombre de ces nœuds (\p size).
  */
 struct tree_t {
-  struct tree_node_t *root;
-  unsigned int size;
+	struct tree_node_t *root;
+	unsigned int size;
 };
 
 /**

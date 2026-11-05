@@ -10,58 +10,58 @@
  * dyn_table_t (Dynamic Table)
  ********************************************************************/
 struct dyn_table_t *new_dyn_table() {
-  // TO DO
+	// TO DO
 }
 
 void *get_dyn_table_data(const struct dyn_table_t *table,
                          unsigned int position) {
-  // TO DO
+	// TO DO
 }
 
 unsigned int get_dyn_table_size(const struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 unsigned int get_dyn_table_used(const struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 int dyn_table_is_empty(const struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 int dyn_table_is_full(const struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 int dyn_table_is_quasi_empty(const struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 void set_dyn_table_data(struct dyn_table_t *table, unsigned int position,
                         void *newData) {
-  // TO DO
+	// TO DO
 }
 
 void set_dyn_table_size(struct dyn_table_t *table, unsigned int newSize) {
-  // TO DO
+	// TO DO
 }
 
 void increase_dyn_table_used(struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 void decrease_dyn_table_used(struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 void view_dyn_table(const struct dyn_table_t *table,
                     void (*viewData)(const void *)) {
-  // TO DO
+	// TO DO
 }
 
 void delete_dyn_table(struct dyn_table_t *table, void (*freeData)(void *)) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -70,7 +70,7 @@ void delete_dyn_table(struct dyn_table_t *table, void (*freeData)(void *)) {
  * @param table
  */
 static void scale_up(struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 /**
@@ -79,18 +79,18 @@ static void scale_up(struct dyn_table_t *table) {
  * @param table
  */
 static void scale_down(struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 void dyn_table_insert(struct dyn_table_t *table, void *data) {
-  // TO DO
+	// TO DO
 }
 
 void *dyn_table_remove(struct dyn_table_t *table) {
-  // TO DO
+	// TO DO
 }
 
 void dyn_table_swap_nodes_data(struct dyn_table_t *table, unsigned int pos1,
                                unsigned int pos2) {
-  // TO DO
+	// TO DO
 }
