@@ -173,16 +173,16 @@ void set_list_tail(struct list_t *L, struct list_node_t *newTail) {
 }
 
 void delete_list(struct list_t *L, void (*freeData)(void *)) {
-	assert(L && freeData);
-	assert(freeData);
+	assert(L);
 
 	list_node_t *courant = get_list_head(L);
 	list_node_t *temp;
 
 	while (courant != NULL) {
 		temp = get_successor(courant);
-
-		freeData(get_list_node_data(courant));
+		if (freeData != NULL) {
+			freeData(get_list_node_data(courant));
+		}
 		delete_list_node_t(&courant);
 
 		courant = temp;
@@ -261,6 +261,7 @@ void list_insert_after(struct list_t *L, void *data, struct list_node_t *node) {
 	}
 
 	set_successor(node, insertedNode);
+	increase_list_size(L);
 }
 
 ///////////////////////////////////
