@@ -320,15 +320,25 @@ static struct tree_node_t *insert_into_subtree(struct tree_node_t *node,
 		return node;
 	}
 
-	if (position % 2 == 1) {
-		node->left =
-		    insert_into_subtree(node->left, (position - 1) / 2, data);
+	uint path = position + 1;
+	uint mask = highest_power_of_two_leq(path);
 
+	/* Bit de direction depuis la racine : 0 = gauche, 1 = droite. */
+	uint go_right = path & (mask >> 1);
+
+	/* Position relative dans le sous-arbre fils.
+	 * mask >> 1 place le nouveau bit de tête du fils au bon endroit, et
+	 * path & (mask - 1) conserve les bits restants du chemin.
+	 */
+	uint next_path = (mask >> 1) | (path & (mask - 1));
+	/* On a donc next_path = next_position + 1, d'où le -1. */
+	uint next_position = next_path - 1;
+
+	if (go_right) {
+		node->right = insert_into_subtree(node->right, next_position, data);
 	} else {
-		node->right =
-		    insert_into_subtree(node->right, (position - 2) / 2, data);
+		node->left = insert_into_subtree(node->left, next_position, data);
 	}
-	// PAS TOUCHE NOA (je sais que ça sert à rien)
 	return node;
 }
 
@@ -380,13 +390,25 @@ static struct tree_node_t *remove_from_subtree(struct tree_node_t *node,
 		free(node);
 		return NULL;
 	}
-	if (position % 2 == 1) {
-		node->left =
-		    remove_from_subtree(node->left, (position - 1) / 2, data);
 
+	uint path = position + 1;
+	uint mask = highest_power_of_two_leq(path);
+
+	/* Bit de direction depuis la racine : 0 = gauche, 1 = droite. */
+	uint go_right = path & (mask >> 1);
+
+	/* Position relative dans le sous-arbre fils.
+	 * mask >> 1 place le nouveau bit de tête du fils au bon endroit, et
+	 * path & (mask - 1) conserve les bits restants du chemin.
+	 */
+	uint next_path = (mask >> 1) | (path & (mask - 1));
+	/* On a donc next_path = next_position + 1, d'où le -1. */
+	uint next_position = next_path - 1;
+
+	if (go_right) {
+		node->right = remove_from_subtree(node->right, next_position, data);
 	} else {
-		node->right =
-		    remove_from_subtree(node->right, (position - 2) / 2, data);
+		node->left = remove_from_subtree(node->left, next_position, data);
 	}
 	// PAS TOUCHE NOA (je sais que ça sert à rien)
 	return node;
@@ -439,11 +461,25 @@ static struct tree_node_t *get_tree_node_at_position(struct tree_node_t *node,
 	if (position == 0) {
 		return node;
 	}
-	if (position % 2 == 1) {
-		return get_tree_node_at_position(node->left, (position >> 1));
 
+	uint path = position + 1;
+	uint mask = highest_power_of_two_leq(path);
+
+	/* Bit de direction depuis la racine : 0 = gauche, 1 = droite. */
+	uint go_right = path & (mask >> 1);
+
+	/* Position relative dans le sous-arbre fils.
+	 * mask >> 1 place le nouveau bit de tête du fils au bon endroit, et
+	 * path & (mask - 1) conserve les bits restants du chemin.
+	 */
+	uint next_path = (mask >> 1) | (path & (mask - 1));
+	/* On a donc next_path = next_position + 1, d'où le -1. */
+	uint next_position = next_path - 1;
+
+	if (go_right) {
+		return get_tree_node_at_position(node->right, next_position);
 	} else {
-		return get_tree_node_at_position(node->right, (position) >> 1);
+		return get_tree_node_at_position(node->left, next_position);
 	}
 	// PAS TOUCHE NOA (je sais que ça sert à rien)
 	return node;
