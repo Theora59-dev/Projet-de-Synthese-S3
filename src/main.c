@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "classes.h"
+
 #include "algo.h"
 #include "util.h"
 
@@ -22,6 +24,8 @@ void display_help() {
 }
 
 int main(int argc, char *argv[]) {
+	HEAP = new_heap_class();
+
 	if (argc != 5)
 		display_help();
 

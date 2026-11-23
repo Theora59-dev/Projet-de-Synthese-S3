@@ -1,5 +1,7 @@
 #include "heap.h"
 
+#include "classes.h"
+
 #include <assert.h>
 #include <math.h>
 #include <stdio.h>
@@ -144,9 +146,59 @@ unsigned int list_heap_insert(struct heap_t *H, unsigned long key, void *data) {
 	assert(H);
 	assert(data);
 
-	dyn_table_t *dict = get_heap_dictionary(H);
+	// 1. Récupérer la liste contenue dans le tas
+	list_t *L = (list_t *)H->heap;
 
-	// TO DO
+	// 2. Créer le nœud qui contient notre élément
+	heap_node_t *newNode = new_heap_node(key, data);
+
+	// 3. Réserver une position dans le dictionnaire
+	unsigned int dictPosition = get_dyn_table_used(H->dict);
+
+	// Enregistrer cette position dans le nœud
+	set_heap_node_dict_position(newNode, dictPosition);
+
+	// 4. Chercher où insérer le nouvel élément
+	list_node_t *current = get_list_head(L);
+
+	while (current != NULL) {
+		heap_node_t *currentHeapNode =
+		    (heap_node_t *)get_list_node_data(current);
+
+		if (get_heap_node_key(currentHeapNode) > key) {
+			break;
+		}
+
+		current = get_successor(current);
+	}
+
+	// 5. Insérer le nouvel élément à la bonne position
+	list_node_t *insertedNode;
+
+	if (current == get_list_head(L)) {
+		// Liste vide ou insertion en tête
+		list_insert_first(L, newNode);
+		insertedNode = get_list_head(L);
+	} else {
+		// Insertion après le prédécesseur de current
+		list_node_t *previous;
+
+		if (current == NULL) {
+			// On est arrivé à la fin de la liste
+			previous = get_list_tail(L);
+		} else {
+			previous = get_predecessor(current);
+		}
+
+		list_insert_after(L, newNode, previous);
+		insertedNode = get_successor(previous);
+	}
+
+	// 6. Ajouter le nœud de liste au dictionnaire
+	dyn_table_insert(H->dict, insertedNode);
+
+	// 7. Renvoyer la position dans le dictionnaire
+	return dictPosition;
 }
 
 // N'oubliez pas à mettre à jour le dictionnaire, si besoin !
