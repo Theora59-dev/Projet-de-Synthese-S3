@@ -7,5 +7,7 @@ typedef struct list_node_t list_node_t;
 typedef struct list_t list_t;
 typedef struct tree_node_t tree_node_t;
 typedef struct tree_t tree_t;
+typedef struct heap_t heap_t;
+typedef struct heap_node_t heap_node_t;
 
 typedef unsigned int uint;

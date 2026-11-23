@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "aliases.h"
 #include "dyntable.h"
 #include "list.h"
 #include "tree.h"
@@ -22,32 +23,52 @@
  * @return le nouveau noeud créé
  */
 static struct heap_node_t *new_heap_node(unsigned long key, void *data) {
-	// TO DO
+	heap_node_t *node = calloc(1, sizeof(heap_node_t));
+
+	assert(node);
+
+	node->data = data;
+	node->key = key;
+
+	return node;
 }
 
 unsigned long get_heap_node_key(const struct heap_node_t *node) {
-	// TO DO
+	assert(node);
+
+	return node->key;
 }
 
 void *get_heap_node_data(const struct heap_node_t *node) {
-	// TO DO
+	assert(node);
+
+	return node->data;
 }
 
 unsigned int get_heap_node_dict_position(const struct heap_node_t *node) {
-	// TO DO
+	assert(node);
+
+	return node->dict_position;
 }
 
 void set_heap_node_key(struct heap_node_t *node, unsigned long newKey) {
-	// TO DO
+	assert(node);
+
+	node->key = newKey;
 }
 
 void set_heap_node_data(struct heap_node_t *node, void *newData) {
-	// TO DO
+	assert(node);
+	assert(newData);
+
+	node->data = newData;
 }
 
 void set_heap_node_dict_position(struct heap_node_t *node,
                                  unsigned int newPosition) {
-	// TO DO
+	assert(node);
+
+	node->dict_position = newPosition;
 }
 
 // void view_heap_node(const struct heap_node_t * node, void (*viewData)(const
@@ -120,22 +141,50 @@ struct dyn_table_t *get_heap_dictionary(const struct heap_t *H) {
 
 // N'oubliez pas à mettre à jour le dictionnaire, si besoin !
 unsigned int list_heap_insert(struct heap_t *H, unsigned long key, void *data) {
+	assert(H);
+	assert(data);
+
+	dyn_table_t *dict = get_heap_dictionary(H);
+
 	// TO DO
 }
 
 // N'oubliez pas à mettre à jour le dictionnaire, si besoin !
 struct heap_node_t *list_heap_extract_min(struct heap_t *H) {
-	// TO DO
+	assert(H);
+
+	list_t *L = get_heap(H);
+	dyn_table_t *dict = get_heap_dictionary(H);
+
+	assert(L);
+	assert(dict);
+
+	list_node_t *min = get_list_head(L);
+
+	assert(min);
+
+	unsigned long key = 0; // TO DO
+	void *data = get_list_node_data(min);
+
+	heap_node_t *node = new_heap_node(key, data);
+
+	return node;
 }
 
 // N'oubliez pas à mettre à jour le dictionnaire, si besoin !
 void list_heap_increase_priority(struct heap_t *H, unsigned int dict_position,
                                  unsigned long newKey) {
-	// TO DO
+	assert(H);
+	assert(H->heap_increase_priority);
+
+	H->heap_increase_priority(H->heap, dict_position, newKey);
 }
 
 int list_heap_is_empty(const void *H) {
-	// TO TO
+	assert(H);
+	assert(((heap_t *)H)->heap_is_empty);
+
+	return ((heap_t *)H)->heap_is_empty(H);
 }
 
 void view_list_heap(const struct heap_t *H,
