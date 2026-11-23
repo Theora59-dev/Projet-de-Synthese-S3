@@ -15,7 +15,7 @@ struct dyn_table_t *new_dyn_table() {
 	assert(dyn_table);
 	dyn_table->T = calloc(1, sizeof(void *));
 	assert(dyn_table->T);
-	dyn_table->size = 0;
+	dyn_table->size = 1;
 	dyn_table->used = 0;
 	return dyn_table;
 }
@@ -39,7 +39,7 @@ unsigned int get_dyn_table_used(const struct dyn_table_t *table) {
 
 int dyn_table_is_empty(const struct dyn_table_t *table) {
 	assert(table);
-	return table->size == 0;
+	return table->used == 0;
 }
 
 int dyn_table_is_full(const struct dyn_table_t *table) {
